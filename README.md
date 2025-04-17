@@ -1,7 +1,7 @@
 
 # How to manipulated arrays in javascript
 
-A practical course how to work with arrays using javascript.
+A practical course that explain how to work with arrays using javascript.
 
 
 
@@ -12,10 +12,10 @@ We have to know something important, there are methods that modify the original 
 Why? there are a concept called: Memory reference in javascript.
 that means, each structure is save into a reference in memory. 
 
-So... if we created a clone form the original that created a new structure but with the same reference in memory. If we modify the original the clone value will change too.
+So... if we created a clone form the original this created a new structure but with the same reference in memory. If we modify the original the clone value will change too.
 
 Mutable is an action that modify the memory refence of an array.
-Inmutable is an action that modify and value but from a difference memory reference, no change the original reference in memory.
+Inmutable is an action that modify a value but from a difference memory reference, no change the original reference in memory.
 ## For-each and for
 Both work for performing interactions on array elements, but what are the differences between them?
 
@@ -39,7 +39,7 @@ The method map consist in creating a new array from the elements of the original
 
 Transformation implits change any element into other, no matter if a number, string, object or other array.
 
-This methos expeted two arguments:
+This method wait two arguments:
 
 * The function that iterate and become element of the array.
 * An object who one to make a context reference.
@@ -164,3 +164,33 @@ const orders = [
 const ordersWithTax = addNewAttr(orders);
 console.log('-- orders with tax:', ordersWithTax);
 ```
+## Filter
+This functions is inmutable, not modify the original array.
+The function filter iterate over an array and return a new array with elements that match with the condition maybe even return and empty array because no element match with the condition, maybe return some elements and even return all elements into an new array.
+
+```javascript
+const words = [
+  'apple',
+  'banana',
+  'cherry',
+  'date',
+  'elderberry',
+  'fig',
+  'grape',
+  'honeydew',]
+
+const newArray = [];
+for (let index = 0; index < words.length; index++) {
+  const element = words[index];
+  if (element.length > 6) {
+    newArray.push(element);
+  }
+}
+
+console.log('new array:', newArray);
+
+const newArray2 = words.filter((word) => word.length > 6);
+console.log('new array 2:', newArray2);
+```
+As we can see into the example, we have an array of strings and we are filtering the array looking for words where their lenght are over 6 if the condition completed we pushed the element into a new array.
+Now we have an other example, with the same condition but with fewer lines of code.
