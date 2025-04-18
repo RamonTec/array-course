@@ -165,7 +165,7 @@ const ordersWithTax = addNewAttr(orders);
 console.log('-- orders with tax:', ordersWithTax);
 ```
 ## Filter
-This functions is inmutable, not modify the original array.
+This function is inmutable, not modify the original array.
 The function filter iterate over an array and return a new array with elements that match with the condition maybe even return and empty array because no element match with the condition, maybe return some elements and even return all elements into an new array.
 
 ```javascript
@@ -194,3 +194,31 @@ console.log('new array 2:', newArray2);
 ```
 As we can see into the example, we have an array of strings and we are filtering the array looking for words where their lenght are over 6 if the condition completed we pushed the element into a new array.
 Now we have an other example, with the same condition but with fewer lines of code.
+
+## Some
+The some method is immutable and consists of returning a logical value of true if there is at least one element that meets the condition established in the function (callback).
+
+```javascript
+const dates = [
+  {
+    startDate: new Date(2021, 1, 1, 10),
+    endDate: new Date(2021, 1, 1, 11),
+    title: "Cita de trabajo",
+  },
+  {
+    startDate: new Date(2021, 1, 1, 15),
+    endDate: new Date(2021, 1, 1, 15, 30),
+    title: "Cita con mi jefe",
+  },
+  {
+    startDate: new Date(2021, 1, 1, 20),
+    endDate: new Date(2021, 1, 1, 21),
+    title: "Cena",
+  },
+];
+
+const rta3 = dates.some((item) => item.startDate.getHours() === 10);
+console.log('some', rta3);
+```
+
+
